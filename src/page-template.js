@@ -2,8 +2,7 @@
 
 // generate a team's html page.
 const generateTeamPage = () => {
-    return `
-<!DOCTYPE html> 
+    return `<!DOCTYPE html> 
 <html lang="en"> 
 <head>
     <meta charset="UTF-8">
@@ -15,8 +14,7 @@ const generateTeamPage = () => {
 
 <body>
 </body>
-</html>
-    `;
+</html>`;
 };
 
 module.exports = generateTeamPage;

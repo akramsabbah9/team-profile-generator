@@ -2,9 +2,9 @@
 const fs = require("fs");
 
 // write data to an HTML page and put it in dist.
-const writeTeamPage = html => {
+const writeToFile = (name, data) => {
     return new Promise((resolve, reject) => {
-        fs.writeFile("./dist/team-profile.html", html, err => {
+        fs.writeFile(name, data, err => {
             // if there's an error writing the file, reject the Promise.
             if (err) return reject(err);
 
@@ -19,9 +19,9 @@ const writeTeamPage = html => {
 
 
 // copy CSS file from src to dist.
-const copyCSS = () => {
+const copyToFile = (donor, target) => {
     return new Promise((resolve, reject) => {
-        fs.copyFile("./src/style.css", "./dist/style.css", err => {
+        fs.copyFile(donor, target, err => {
             if (err) return reject(err);
 
             resolve({
@@ -32,6 +32,6 @@ const copyCSS = () => {
     });
 };
 
-module.exports = { writeTeamPage, copyCSS };
+module.exports = { writeToFile, copyToFile };
 
 /* Akram Sabbah */

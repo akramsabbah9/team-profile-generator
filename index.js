@@ -1,7 +1,7 @@
 /* MODULES */
 const inquirer = require("inquirer");
 const generateTeamPage = require("./src/page-template");
-const { writeTeamPage, copyCSS } = require("./utils/generate-site");
+const { writeToFile, copyToFile } = require("./utils/generate-site");
 
 
 /* GLOBALS */
@@ -13,8 +13,8 @@ const questions = [];
 const init = () => {
     inquirer.prompt(questions)
     .then(data => generateTeamPage(data))
-    .then(html => writeTeamPage(html))
-    .then(copyCSS())
+    .then(html => writeToFile("./dist/team-profile.html", html))
+    .then(copyToFile("./src/style.css", "./dist/style.css"))
     .catch(err => console.log(err));
 };
 
