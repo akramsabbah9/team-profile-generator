@@ -1,7 +1,8 @@
 /* Functions to return page content */
 
 // generate a team's html page.
-const generateTeamPage = () => {
+const generateTeamPage = data => {
+    console.log(data);
     return `<!DOCTYPE html> 
 <html lang="en"> 
 <head>
