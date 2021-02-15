@@ -23,7 +23,7 @@ You must have Node.js installed on your machine to use this application.
 
 ## Walkthrough
 
-![team-profile-generator-tutorial](https://user-images.githubusercontent.com/59624292/107906229-71d16500-6f05-11eb-991e-968ecce6a6a5.gif)
+![team-profile-generator-tutorial](https://user-images.githubusercontent.com/59624292/107906613-5e72c980-6f06-11eb-9b75-c6b9bfef5347.gif)
 
 The above walkthrough can also be found here:
 
