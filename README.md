@@ -20,4 +20,16 @@ You must have Node.js installed on your machine to use this application.
 2. Use ``` node index.js ``` to begin running the Team Profile Generator. 
 3. Follow the on-screen prompts to create your team's HTML webpage and style.css file, which will be generated in the dist folder.
 
-(walkthrough here)
+
+## Walkthrough
+
+![team-profile-generator-tutorial](https://user-images.githubusercontent.com/59624292/107906229-71d16500-6f05-11eb-991e-968ecce6a6a5.gif)
+
+The above walkthrough can also be found here:
+
+https://drive.google.com/file/d/1k1EY4KBxQjJ_jx6_ZqhLRVUlOhiiRHX6/view
+
+
+## Tests
+
+To run tests for this project, navigate to the root directory of this project and use ``` npm run test ```, which will make Jest run through an evaluation of the application's correctness. The tests themselves can be found in the __tests__ directory.
