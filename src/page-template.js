@@ -1,8 +1,48 @@
 /* Functions to return page content */
 
-// generate a card for an Employee
+// generate and return card for an Employee
+const generateCard = employee => {
+    // get role-specific attributes
+    var roleAttr;
+    switch(employee.getRole()) {
+        case "Manager":
+            roleAttr = { attr: "Office Number", val: employee.getOfficeNumber() }
+            break;
+        case "Engineer":
+            roleAttr = { attr: "GitHub", val: employee.getGithub() }
+            break;
+        case "Intern":
+            roleAttr = { attr: "School", val: employee.getSchool() }
+            break;
+        default:
+            roleAttr = { attr: "Error", val: "" }
+    }
 
-// 
+    return `<div class="card mt-4 ml-3 mr-3">
+    <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+</div>`;
+    
+};
+
+// make cards for every employee in data and append them
+const generateTeam = data => {
+    // make a card for the manager
+    cardM = generateCard(data.manager);
+
+    // map the card making function to the list of employees
+    cardE = data.engineers.map(engr => generateCard(engr)).join("\n");
+
+    // map the card making function to the list of interns
+    cardI = data.interns.map(intr => generateCard(intr)).join("\n");
+
+    // then join all the strings together
+    return [ cardM, cardE, cardI ].join("\n");
+};
 
 // generate a team's html page.
 const generateTeamPage = data => {
@@ -22,14 +62,7 @@ const generateTeamPage = data => {
         <h1>My Team<h1>
     </header>
     <div class="d-flex justify-content-center flex-wrap">
-        <div class="card mt-4 ml-3 mr-3">
-            <img class="card-img-top" src="..." alt="Card image cap">
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-            </div>
-        </div>
+        ${generateTeam(data)}
     </div>
 </body>
 </html>`;
